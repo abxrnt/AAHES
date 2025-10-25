@@ -60,7 +60,7 @@
       transform: scaleY(1);
       opacity: 1;
     }
-    
+
     /* Glass cards */
     .glass {
       background: rgba(255, 255, 255, 0.8);
@@ -189,8 +189,53 @@
   <!-- Inside the script section, replace the event listener with this: -->
 <script>
 const cutoffData = [
-  { round: "1", college: "AEC", branch: "CSE", cat: "GEN", close: 80, marks: 98 },
-  { round: "2", college: "AEC", branch: "CSE", cat: "GEN", close: 96 },
+{ round: "1", college: "AEC", branch: "CE", cat: "GEN", close: 414, marks: 193 },
+{ round: "1", college: "AEC", branch: "CE", cat: "OBC", close: 895, marks: 153 },
+{ round: "1", college: "AEC", branch: "CE", cat: "SC", close: 1351, marks: 129 },
+{ round: "1", college: "AEC", branch: "CE", cat: "STP", close: 1137, marks: 139 },
+{ round: "1", college: "AEC", branch: "CE", cat: "STH", close: 2085, marks: 106 },
+
+{ round: "1", college: "AEC", branch: "ME", cat: "GEN", close: 411, marks: 194 },
+{ round: "1", college: "AEC", branch: "ME", cat: "OBC", close: 861, marks: 155 },
+{ round: "1", college: "AEC", branch: "ME", cat: "SC", close: 1029, marks: 145 },
+{ round: "1", college: "AEC", branch: "ME", cat: "STP", close: 1267, marks: 133 },
+{ round: "1", college: "AEC", branch: "ME", cat: "STH", close: 3151, marks: 85 },
+
+{ round: "1", college: "AEC", branch: "CSE", cat: "GEN", close: 80, marks: 271 },
+{ round: "1", college: "AEC", branch: "CSE", cat: "OBC", close: 90, marks: 261 },
+{ round: "1", college: "AEC", branch: "CSE", cat: "SC", close: 86, marks: 266 },
+{ round: "1", college: "AEC", branch: "CSE", cat: "STP", close: 391, marks: 195 },
+{ round: "1", college: "AEC", branch: "CSE", cat: "STH", close: 2461, marks: 97 },
+
+{ round: "1", college: "AEC", branch: "IPE", cat: "GEN", close: 753, marks: 163 },
+{ round: "1", college: "AEC", branch: "IPE", cat: "OBC", close: 1296, marks: 131 },
+{ round: "1", college: "AEC", branch: "IPE", cat: "SC", close: 1384 , marks:  128 },
+{ round: "1", college: "AEC", branch: "IPE", cat: "STP", close:  1156, marks: 138 },
+{ round: "1", college: "AEC", branch: "IPE", cat: "STH", close: 7033 , marks: 35 },
+
+{ round: "1", college: "AEC", branch: "IE", cat: "GEN", close: 612, marks: 174 },
+{ round: "1", college: "AEC", branch: "IE", cat: "OBC", close: 1168, marks: 137 },
+{ round: "1", college: "AEC", branch: "IE", cat: "SC", close: 1225 , marks:  135 },
+{ round: "1", college: "AEC", branch: "IE", cat: "STP", close:  1472, marks: 125 },
+{ round: "1", college: "AEC", branch: "IE", cat: "STH", close: 3678 , marks: 77 },
+
+{ round: "1", college: "AEC", branch: "EE", cat: "GEN", close: 366, marks: 198 },
+{ round: "1", college: "AEC", branch: "EE", cat: "OBC", close: 697, marks: 167 },
+{ round: "1", college: "AEC", branch: "EE", cat: "SC", close: 901 , marks:  153 },
+{ round: "1", college: "AEC", branch: "EE", cat: "STP", close:  1033, marks: 144 },
+{ round: "1", college: "AEC", branch: "EE", cat: "STH", close: 2676 , marks: 93 },
+
+{ round: "1", college: "AEC", branch: "CHE", cat: "GEN", close: 584, marks: 176 },
+{ round: "1", college: "AEC", branch: "CHE", cat: "OBC", close: 1118, marks: 140 },
+{ round: "1", college: "AEC", branch: "CHE", cat: "SC", close:  1230, marks: 135 },
+{ round: "1", college: "AEC", branch: "CHE", cat: "STP", close: 1432 , marks: 126 },
+{ round: "1", college: "AEC", branch: "CHE", cat: "STH", close: 4121 , marks: 71 },
+
+{ round: "1", college: "AEC", branch: "ETE", cat: "GEN", close: 188, marks: 229 },
+{ round: "1", college: "AEC", branch: "ETE", cat: "OBC", close: 456, marks: 189 },
+{ round: "1", college: "AEC", branch: "ETE", cat: "SC", close:  761, marks: 163 },
+{ round: "1", college: "AEC", branch: "ETE", cat: "STP", close: 731 , marks: 165 },
+{ round: "1", college: "AEC", branch: "ETE", cat: "STH", close: 3515 , marks: 80 },
   { round: "1", college: "AEC", branch: "ETC", cat: "GEN", close: 188 },
   { round: "2", college: "AEC", branch: "ETC", cat: "GEN", close: 267 },
   { round: "1", college: "JEC", branch: "CSE", cat: "GEN", close: 223 },
