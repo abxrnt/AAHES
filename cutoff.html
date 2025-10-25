@@ -24,6 +24,43 @@
     }
     .fade-up { opacity: 0; animation: fadeUp 0.7s ease-out forwards; }
 
+    /* Navbar */
+    nav {
+      background: linear-gradient(to right, #059669, #10b981, #14b8a6);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* Navbar Link Hover */
+    .nav-link {
+      position: relative;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: white;
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Mobile menu animation */
+    #mobile-menu {
+      transition: all 0.35s ease-in-out;
+      transform-origin: top;
+      transform: scaleY(0);
+      opacity: 0;
+    }
+    #mobile-menu.open {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    
     /* Glass cards */
     .glass {
       background: rgba(255, 255, 255, 0.8);
@@ -50,11 +87,44 @@
   </style>
 </head>
 <body class="flex flex-col min-h-screen">
+  <!-- 🌈 Gradient Navbar -->
+<nav class="navbar text-white flex items-center px-6 md:px-16 py-2 sticky top-0 z-50 shadow-lg rounded-b-2xl">
+  <!-- Logo and Text aligned left -->
+  <div class="flex items-center gap-2">
+    <img src="logo.jpeg" alt="logo" class="w-9 h-9 object-cover rounded-full border-2 border-white shadow-md" />
+    <h1 class="text-white text-xl font-bold hover:text-gray-200 transition-colors">AAHES - CEE</h1>
+  </div>
+
+  <!-- Desktop Menu pushed to the right -->
+  <ul class="hidden md:flex gap-8 text-base items-center ml-auto">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="#library" class="nav-link">Library</a></li>
+    <li>
+      <button id="logoutBtn" class="bg-red-600 text-white px-4 py-1 rounded-lg hover:bg-red-700 transition">Logout</button>
+    </li>
+  </ul>
+
+  <!-- Mobile Hamburger -->
+  <div class="md:hidden ml-auto">
+    <button id="menu-btn" class="focus:outline-none flex flex-col justify-center items-center space-y-1 transition-all duration-300">
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="absolute top-[70px] left-0 w-full bg-gradient-to-b from-emerald-600 via-green-500 to-teal-600 text-white px-6 py-6 space-y-4 shadow-2xl md:hidden z-40 rounded-b-3xl">
+  <a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-white/20 hover:shadow-md transition">🏠 Home</a>
+  <a href="#library" class="block px-4 py-3 rounded-xl hover:bg-white/20 hover:shadow-md transition">🎯 Library</a>
+  <button onclick="localStorage.removeItem('loggedIn'); window.location.href='login.html';" class="w-full text-left px-4 py-3 rounded-xl bg-red-600 hover:bg-red-700 transition">Logout</button>
+</div>
 
   <!-- Hero Section -->
   <section class="text-center py-16 px-6">
-    <h1 class="text-4xl md:text-5xl font-bold text-green-700 mb-4 fade-up">Closing Ranks by Round</h1>
-    <p class="text-gray-700 mb-8 fade-up max-w-xl mx-auto">Select your college, branch, and category to view closing ranks for Round 1, 2, and 3.</p>
+    <h1 class="text-4xl md:text-5xl font-bold text-green-700 mb-4 fade-up">CEE Cutoff Ranks & Marks</h1>
+    <p class="text-gray-700 mb-8 fade-up max-w-xl mx-auto">This serves as an approximate reference for the upcoming CEE examinations. The data has been compiled from the official ASTU records of the CEE 2024 exam. You can use these cutoffs to make informed predictions.</p>
   </section>
 
   <!-- Filter Form -->
@@ -116,10 +186,10 @@
     <p class="text-gray-700">© 2025 College Predictor | Designed by Abishrant</p>
   </footer>
 
-  <!-- Script -->
-  <script>
-    const cutoffData = [
-  { round: "1", college: "AEC", branch: "CSE", cat: "GEN", close: 80 },
+  <!-- Inside the script section, replace the event listener with this: -->
+<script>
+const cutoffData = [
+  { round: "1", college: "AEC", branch: "CSE", cat: "GEN", close: 80, marks: 98 },
   { round: "2", college: "AEC", branch: "CSE", cat: "GEN", close: 96 },
   { round: "1", college: "AEC", branch: "ETC", cat: "GEN", close: 188 },
   { round: "2", college: "AEC", branch: "ETC", cat: "GEN", close: 267 },
@@ -183,47 +253,47 @@
   { round: "2", college: "DEC", branch: "ME", cat: "GEN", close: 3261 }
 ];
 
-    const form = document.getElementById("filterForm");
-    const result = document.getElementById("result");
+const form = document.getElementById("filterForm");
+const result = document.getElementById("result");
 
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      const college = document.getElementById("college").value;
-      const branch = document.getElementById("branch").value;
-      const cat = document.getElementById("category").value;
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const college = document.getElementById("college").value;
+  const branch = document.getElementById("branch").value;
+  const cat = document.getElementById("category").value;
 
-      if (!college || !branch || !cat) {
-        result.innerHTML = `<p class="col-span-3 text-red-500 font-semibold">⚠️ Please fill all fields.</p>`;
-        return;
-      }
+  if (!college || !branch || !cat) {
+    result.innerHTML = `<p class="col-span-3 text-red-500 font-semibold">⚠️ Please fill all fields.</p>`;
+    return;
+  }
 
-      let html = "";
-      ["1","2","3"].forEach(round => {
-        const match = cutoffData.find(d => d.college===college && d.branch===branch && d.cat===cat && d.round===round);
-        if(match) {
-          html += `
-            <div class="glass p-6 rounded-2xl shadow-lg fade-up">
-              <h3 class="text-2xl font-bold text-green-700 mb-2">Round ${round}</h3>
-              <div class="text-lg text-gray-800 mb-2">
-                <p><strong>College:</strong> ${match.college}</p>
-                <p><strong>Branch:</strong> ${match.branch}</p>
-                <p><strong>Category:</strong> ${match.cat}</p>
-              </div>
-              <p class="text-4xl font-extrabold text-green-800 mb-1">Closing Rank: ${match.close}</p>
-              <p class="text-gray-500 italic">Status: ${match.close < 1000 ? 'High Chance' : 'Moderate/Low Chance'}</p>
-            </div>`;
-        } else {
-          html += `
-            <div class="glass p-6 rounded-2xl shadow-lg fade-up">
-              <h3 class="text-2xl font-bold text-green-700 mb-2">Round ${round}</h3>
-              <p class="text-gray-500 italic">Not Available</p>
-            </div>`;
-        }
-      });
-      result.innerHTML = html;
+  let html = "";
+  ["1","2","3"].forEach(round => {
+    const match = cutoffData.find(d => d.college===college && d.branch===branch && d.cat===cat && d.round===round);
+    if(match) {
+      html += `
+        <div class="glass p-6 rounded-2xl shadow-lg fade-up">
+          <h3 class="text-2xl font-bold text-green-700 mb-2">Round ${round}</h3>
+          <div class="text-lg text-gray-800 mb-2">
+            <p><strong>College:</strong> ${match.college}</p>
+            <p><strong>Branch:</strong> ${match.branch}</p>
+            <p><strong>Category:</strong> ${match.cat}</p>
+          </div>
+          <p class="text-3xl font-extrabold text-green-800 mb-1">Closing Rank: ${match.close}</p>
+          <p class="text-2xl font-bold text-green-700 mt-2">Marks: ${match.marks}</p>
+        </div>`;
+    } else {
+      html += `
+        <div class="glass p-6 rounded-2xl shadow-lg fade-up">
+          <h3 class="text-2xl font-bold text-green-700 mb-2">Round ${round}</h3>
+          <p class="text-gray-500 italic">N/A</p>
+        </div>`;
+    }
+  });
+  result.innerHTML = html;
 
-      document.querySelectorAll(".fade-up").forEach((el,i)=> el.style.animationDelay = `${i*0.1}s`);
-    });
-  </script>
+  document.querySelectorAll(".fade-up").forEach((el,i)=> el.style.animationDelay = `${i*0.1}s`);
+});
+</script>
 </body>
 </html>
