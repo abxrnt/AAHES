@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEE PYQs | AAHES</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Poppins', sans-serif; background: #f0fdfa; margin:0; padding:16px;">
+
+<h1 style="font-family: 'Fredoka One', sans-serif; font-size:2rem; font-weight:800; color:#16a34a; text-align:center; margin-bottom:16px;">
+  CEE Previous Year Questions (PYQs)
+</h1>
+
+<div id="container" style="display:flex; flex-direction:column; gap:8px; height:85vh;">
+
+  <!-- Tabs -->
+  <div id="tabs" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:8px;">
+    <button class="tab-btn" data-year="2025" style="padding:6px 12px; background:#10b981; color:white; font-weight:600; border-radius:8px; cursor:pointer; font-size:14px; white-space:nowrap;">2025</button>
+    <button class="tab-btn" data-year="2024" style="padding:6px 12px; background:#10b981; color:white; font-weight:600; border-radius:8px; cursor:pointer; font-size:14px; white-space:nowrap;">2024</button>
+    <button class="tab-btn" data-year="2023" style="padding:6px 12px; background:#10b981; color:white; font-weight:600; border-radius:8px; cursor:pointer; font-size:14px; white-space:nowrap;">2023</button>
+    <button class="tab-btn" data-year="2022" style="padding:6px 12px; background:#10b981; color:white; font-weight:600; border-radius:8px; cursor:pointer; font-size:14px; white-space:nowrap;">2022</button>
+    <button class="tab-btn" data-year="2021" style="padding:6px 12px; background:#10b981; color:white; font-weight:600; border-radius:8px; cursor:pointer; font-size:14px; white-space:nowrap;">2021</button>
+    <button class="tab-btn" data-year="2020" style="padding:6px 12px; background:#10b981; color:white; font-weight:600; border-radius:8px; cursor:pointer; font-size:14px; white-space:nowrap;">2020</button>
+    <button class="tab-btn" data-year="2019" style="padding:6px 12px; background:#10b981; color:white; font-weight:600; border-radius:8px; cursor:pointer; font-size:14px; white-space:nowrap;">2019</button>
+    <button class="tab-btn" data-year="2018" style="padding:6px 12px; background:#10b981; color:white; font-weight:600; border-radius:8px; cursor:pointer; font-size:14px; white-space:nowrap;">2018</button>
+    <button class="tab-btn" data-year="2017" style="padding:6px 12px; background:#10b981; color:white; font-weight:600; border-radius:8px; cursor:pointer; font-size:14px; white-space:nowrap;">2017</button>
+  </div>
+
+  <!-- PDF Viewer -->
+  <div id="pdf-container" style="flex:1; display:flex; flex-direction:column; border:1px solid #16a34a; border-radius:16px; overflow:hidden;">
+    <iframe id="pdf-frame" src="ceepdf/cee2025.pdf#toolbar=0&navpanes=0&scrollbar=0" style="flex:1; width:100%; border:none;"></iframe>
+  </div>
+
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab-btn");
+  const pdfFrame = document.getElementById("pdf-frame");
+  const container = document.getElementById("container");
+  const tabsDiv = document.getElementById("tabs");
+
+  // First tab active
+  tabs[0].style.background = "#059669";
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.style.background = "#10b981");
+      tab.style.background = "#059669";
+      pdfFrame.src = `ceepdf/cee${tab.dataset.year}.pdf#toolbar=0&navpanes=0&scrollbar=0`;
+    });
+  });
+
+  // Adjust layout for desktop/mobile
+  function adjustLayout() {
+    if(window.innerWidth >= 768){
+      container.style.flexDirection = "row";
+      tabsDiv.style.flexDirection = "column";
+      tabsDiv.style.width = "180px";
+      tabsDiv.style.alignItems = "flex-start";
+      tabsDiv.style.justifyContent = "flex-start";
+    } else {
+      container.style.flexDirection = "column";
+      tabsDiv.style.flexDirection = "row";
+      tabsDiv.style.width = "100%";
+      tabsDiv.style.justifyContent = "center";
+      tabsDiv.style.alignItems = "center";
+    }
+  }
+
+  window.addEventListener("resize", adjustLayout);
+  window.addEventListener("load", adjustLayout);
+</script>
+
+</body>
+</html>
