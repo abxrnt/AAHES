@@ -92,7 +92,7 @@
   <!-- Logo and Text aligned left -->
   <div class="flex items-center gap-2">
     <img src="logo.jpeg" alt="logo" class="w-9 h-9 object-cover rounded-full border-2 border-white shadow-md" />
-    <h1 class="text-white text-xl font-bold hover:text-gray-200 transition-colors">AAHES - CEE</h1>
+    <h1 class="text-white text-xl font-bold hover:text-gray-200 transition-colors">AAHES - CEE Cutoffs</h1>
   </div>
 
   <!-- Desktop Menu pushed to the right -->
@@ -122,14 +122,14 @@
 </div>
 
   <!-- Hero Section -->
-  <section class="text-center py-16 px-6">
+  <section class="text-center py-10 px-6">
     <h1 class="text-4xl md:text-5xl font-bold text-green-700 mb-4 fade-up">CEE Cutoff Ranks & Marks</h1>
     <p class="text-gray-700 mb-8 fade-up max-w-xl mx-auto">This serves as an approximate reference for the upcoming CEE examinations. The data has been compiled from the official ASTU records of the CEE 2024 exam. You can use these cutoffs to make informed predictions.</p>
   </section>
 
   <!-- Filter Form -->
-  <section class="flex justify-center px-4 mb-12">
-    <form id="filterForm" class="glass p-6 rounded-2xl w-full max-w-4xl fade-up grid gap-4 md:grid-cols-4">
+  <section class="flex justify-center px-2 mb-12">
+    <form id="filterForm" class="glass p-4 rounded-2xl w-full max-w-4xl fade-up grid gap-2 md:grid-cols-4">
       
       <div class="flex flex-col">
         <label class="text-gray-800 mb-1 font-semibold">College</label>
@@ -150,13 +150,15 @@
         <select id="branch" class="p-3 rounded-lg text-gray-800 w-full">
           <option value="">Select Branch</option>
           <option value="CSE">CSE</option>
-          <option value="ETC">ETC</option>
+          <option value="ETE">ETE</option>
           <option value="ME">ME</option>
           <option value="CE">CE</option>
           <option value="EE">EE</option>
           <option value="IE">IE</option>
           <option value="CHE">CHE</option>
-          <option value="PEI">PEI</option>
+          <option value="IPE">IPE</option>
+          <option value="PEI">PE & IE</option>
+
         </select>
       </div>
 
@@ -165,10 +167,10 @@
         <select id="category" class="p-3 rounded-lg text-gray-800 w-full">
           <option value="">Select Category</option>
           <option value="GEN">GEN</option>
-          <option value="OBC">OBC</option>
-          <option value="MOBC">MOBC</option>
+          <option value="OBC">OBC/MOBC</option>
           <option value="SC">SC</option>
-          <option value="ST">ST</option>
+          <option value="STP">STP</option>
+          <option value="STH">STH</option>
         </select>
       </div>
 
@@ -183,12 +185,12 @@
 
   <!-- Footer -->
   <footer class="text-center py-6 bg-green-50 mt-auto">
-    <p class="text-gray-700">© 2025 College Predictor | Designed by Abishrant</p>
+    <p class="text-gray-700">© 2025 College Predictor | Designed by AAHES & Team</p>
   </footer>
 
   <!-- Inside the script section, replace the event listener with this: -->
 <script>
-const cutoffData = [
+const cutoffData = [/* your existing cutoffData (same as above) */
 
 // AEC - R1 //
 { round: "1", college: "AEC", branch: "CE", cat: "GEN", close: 414, marks: 193 },
@@ -357,12 +359,377 @@ const cutoffData = [
 { round: "1", college: "JIST", branch: "ME", cat: "OBC", close: 1614, marks: 120 },
 { round: "1", college: "JIST", branch: "ME", cat: "SC", close: 1803, marks: 115 },
 { round: "1", college: "JIST", branch: "ME", cat: "STP", close: 2402, marks: 99 },
-{ round: "1", college: "JIST", branch: "ME", cat: "STH", close: 4759, marks: 63 }
+{ round: "1", college: "JIST", branch: "ME", cat: "STH", close: 4759, marks: 63 },
+
+// AEC - R2 //
+{ round: "2", college: "AEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "ME", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CSE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CSE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CSE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CSE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CSE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "IPE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "IPE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "IPE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "IPE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "IPE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "IE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "IE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "IE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "IE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "IE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "EE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "EE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "EE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "EE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "EE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CHE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CHE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CHE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CHE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "CHE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "ETE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "ETE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "ETE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "ETE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "AEC", branch: "ETE", cat: "STH", close: "", marks: "" },
+
+// JEC - R2 //
+{ round: "2", college: "JEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "CSE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "CSE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "CSE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "CSE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "CSE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "EE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "EE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "EE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "EE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "EE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "ME", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "IE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "IE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "IE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "IE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "JEC", branch: "IE", cat: "STH", close: "", marks: "" },
+
+// DEC - R2 //
+{ round: "2", college: "DEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "ME", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "CSE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "CSE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "CSE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "CSE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "DEC", branch: "CSE", cat: "STH", close: "", marks: "" },
+
+// GEC - R2 //
+{ round: "2", college: "GEC", branch: "CHE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "CHE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "CHE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "CHE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "CHE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "GEC", branch: "ME", cat: "STH", close: "", marks: "" },
+
+// BVEC - R2 //
+{ round: "2", college: "BVEC", branch: "ETE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "ETE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "ETE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "ETE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "ETE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "CSE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "CSE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "CSE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "CSE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "CSE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "BVEC", branch: "ME", cat: "STH", close: "", marks: "" },
+
+// BBEC - R2 //
+{ round: "2", college: "BBEC", branch: "CHE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "CHE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "CHE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "CHE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "CHE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "EE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "EE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "EE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "EE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "EE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "BBEC", branch: "ME", cat: "STH", close: "", marks: "" },
+
+// JIST - R2 //
+{ round: "2", college: "JIST", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "ETE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "ETE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "ETE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "ETE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "ETE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "PEIE", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "PEIE", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "PEIE", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "PEIE", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "PEIE", cat: "STH", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "2", college: "JIST", branch: "ME", cat: "STH", close: "", marks: "" },
+
+// AEC - R3 //
+{ round: "3", college: "AEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "ME", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CSE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CSE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CSE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CSE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CSE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "IPE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "IPE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "IPE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "IPE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "IPE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "IE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "IE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "IE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "IE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "IE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "EE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "EE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "EE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "EE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "EE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CHE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CHE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CHE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CHE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "CHE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "ETE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "ETE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "ETE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "ETE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "AEC", branch: "ETE", cat: "STH", close: "", marks: "" },
+
+// JEC - R3 //
+{ round: "3", college: "JEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "CSE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "CSE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "CSE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "CSE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "CSE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "EE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "EE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "EE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "EE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "EE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "ME", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "IE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "IE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "IE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "IE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "JEC", branch: "IE", cat: "STH", close: "", marks: "" },
+
+// DEC - R3 //
+{ round: "3", college: "DEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "ME", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "CSE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "CSE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "CSE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "CSE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "DEC", branch: "CSE", cat: "STH", close: "", marks: "" },
+
+// GEC - R3 //
+{ round: "3", college: "GEC", branch: "CHE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "CHE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "CHE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "CHE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "CHE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "GEC", branch: "ME", cat: "STH", close: "", marks: "" },
+
+// BVEC - R3 //
+{ round: "3", college: "BVEC", branch: "ETE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "ETE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "ETE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "ETE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "ETE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "CSE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "CSE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "CSE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "CSE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "CSE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "BVEC", branch: "ME", cat: "STH", close: "", marks: "" },
+
+// BBEC - R3 //
+{ round: "3", college: "BBEC", branch: "CHE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "CHE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "CHE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "CHE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "CHE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "EE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "EE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "EE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "EE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "EE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "BBEC", branch: "ME", cat: "STH", close: "", marks: "" },
+
+// JIST - R3 //
+{ round: "3", college: "JIST", branch: "CE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "CE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "CE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "CE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "CE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "ETE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "ETE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "ETE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "ETE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "ETE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "PEIE", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "PEIE", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "PEIE", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "PEIE", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "PEIE", cat: "STH", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "ME", cat: "GEN", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "ME", cat: "OBC", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "ME", cat: "SC", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "ME", cat: "STP", close: "", marks: "" },
+{ round: "3", college: "JIST", branch: "ME", cat: "STH", close: "", marks: "" },
 ];
 
 const form = document.getElementById("filterForm");
 const result = document.getElementById("result");
 
+// ✅ Automatically limit branch options when college is selected
+document.getElementById("college").addEventListener("change", (e) => {
+  const selectedCollege = e.target.value;
+  const branchSelect = document.getElementById("branch");
+
+  // Clear previous options
+  branchSelect.innerHTML = `<option value="">Select Branch</option>`;
+
+  if (!selectedCollege) return;
+
+  // Find available branches for the selected college
+  const availableBranches = [...new Set(
+    cutoffData
+      .filter(d => d.college === selectedCollege)
+      .map(d => d.branch)
+  )];
+
+  // Add them as dropdown options
+  availableBranches.forEach(branch => {
+    const opt = document.createElement("option");
+    opt.value = branch;
+    opt.textContent = branch;
+    branchSelect.appendChild(opt);
+  });
+});
+
+// ✅ Handle form submit
 form.addEventListener("submit", e => {
   e.preventDefault();
   const college = document.getElementById("college").value;
@@ -374,33 +741,48 @@ form.addEventListener("submit", e => {
     return;
   }
 
+  // ✅ Find data for all rounds
+  const availableRounds = ["1", "2", "3"].filter(r =>
+    cutoffData.some(d => d.college === college && d.branch === branch && d.cat === cat && d.round === r)
+  );
+
+  if (availableRounds.length === 0) {
+    result.innerHTML = `
+      <div class="text-center text-gray-600 mt-8">
+        No data found for ${college} - ${branch} (${cat})
+      </div>`;
+    return;
+  }
+
+  // ✅ Build result cards dynamically
   let html = "";
-  ["1","2","3"].forEach(round => {
-    const match = cutoffData.find(d => d.college===college && d.branch===branch && d.cat===cat && d.round===round);
-    if(match) {
-      html += `
-        <div class="glass p-6 rounded-2xl shadow-lg fade-up">
-          <h3 class="text-2xl font-bold text-green-700 mb-2">Round ${round}</h3>
-          <div class="text-lg text-gray-800 mb-2">
-            <p><strong>College:</strong> ${match.college}</p>
-            <p><strong>Branch:</strong> ${match.branch}</p>
-            <p><strong>Category:</strong> ${match.cat}</p>
-          </div>
-          <p class="text-3xl font-extrabold text-green-800 mb-1">Closing Rank: ${match.close}</p>
-          <p class="text-2xl font-bold text-green-700 mt-2">Marks: ${match.marks}</p>
-        </div>`;
-    } else {
-      html += `
-        <div class="glass p-6 rounded-2xl shadow-lg fade-up">
-          <h3 class="text-2xl font-bold text-green-700 mb-2">Round ${round}</h3>
-          <p class="text-gray-500 italic">N/A</p>
-        </div>`;
-    }
+  availableRounds.forEach(round => {
+    const match = cutoffData.find(d =>
+      d.college === college && d.branch === branch && d.cat === cat && d.round === round
+    );
+
+    html += `
+      <div class="glass p-6 rounded-2xl shadow-lg fade-up">
+        <h3 class="text-2xl font-bold text-green-700 mb-2">Round ${round}</h3>
+        <div class="text-lg text-gray-800 mb-2">
+          <p><strong>College:</strong> ${match.college}</p>
+          <p><strong>Branch:</strong> ${match.branch}</p>
+          <p><strong>Category:</strong> ${match.cat}</p>
+        </div>
+        <p class="text-3xl font-extrabold text-green-800 mb-1">Closing Rank: ${match.close}</p>
+        <p class="text-2xl font-bold text-green-700 mt-2">Marks: ${match.marks}</p>
+      </div>
+    `;
   });
+
   result.innerHTML = html;
 
-  document.querySelectorAll(".fade-up").forEach((el,i)=> el.style.animationDelay = `${i*0.1}s`);
+  // ✅ Animation delay
+  document.querySelectorAll(".fade-up").forEach((el, i) => {
+    el.style.animationDelay = `${i * 0.1}s`;
+  });
 });
 </script>
+
 </body>
 </html>
