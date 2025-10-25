@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>College Predictor | AAHES</title>
+  <title>AAHES | CEE</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Font for Premium Look -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Inter', sans-serif; 
       background: linear-gradient(180deg, #e8fff4 0%, #ffffff 100%);
     }
-
+    
     /* Fade-up Animation */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(40px); }
@@ -88,30 +92,30 @@
   </script>
 
   <!-- 🌈 Gradient Navbar -->
-<nav class="navbar text-white flex justify-between items-center px-6 md:px-16 py-2 sticky top-0 z-50 shadow-lg rounded-b-2xl">
-  <!-- Logo -->
+<nav class="navbar text-white flex items-center px-6 md:px-16 py-2 sticky top-0 z-50 shadow-lg rounded-b-2xl">
+  <!-- Logo and Text aligned left -->
   <div class="flex items-center gap-2">
     <img src="logo.jpeg" alt="logo" class="w-9 h-9 object-cover rounded-full border-2 border-white shadow-md" />
-    <span class="text-xl font-extrabold tracking-wider drop-shadow-lg">AAHES</span>
+    <h1 class="text-white text-xl font-bold hover:text-gray-200 transition-colors">AAHES - CEE</h1>
   </div>
 
-  <!-- Desktop Menu -->
-<ul class="hidden md:flex gap-8 text-base items-center">
-  <li><a href="index.html" class="nav-link">Home</a></li>
-  <li><a href="#library" class="nav-link">Library</a></li>
-  <li>
-    <button id="logoutBtn" class="bg-red-600 text-white px-4 py-1 rounded-lg hover:bg-red-700 transition">Logout</button>
-  </li>
-</ul>
+  <!-- Desktop Menu pushed to the right -->
+  <ul class="hidden md:flex gap-8 text-base items-center ml-auto">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="#library" class="nav-link">Library</a></li>
+    <li>
+      <button id="logoutBtn" class="bg-red-600 text-white px-4 py-1 rounded-lg hover:bg-red-700 transition">Logout</button>
+    </li>
+  </ul>
 
-<!-- Mobile Hamburger -->
-<div class="md:hidden">
-  <button id="menu-btn" class="focus:outline-none flex flex-col justify-center items-center space-y-1 transition-all duration-300">
-    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-  </button>
-</div>
+  <!-- Mobile Hamburger -->
+  <div class="md:hidden ml-auto">
+    <button id="menu-btn" class="focus:outline-none flex flex-col justify-center items-center space-y-1 transition-all duration-300">
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+    </button>
+  </div>
 </nav>
 
 <!-- Mobile Menu Overlay -->
@@ -123,40 +127,51 @@
 
 <!-- Hero Section -->
 <section class="text-center py-16 px-4">
-  <div class="inline-flex items-center gap-2 bg-green-100/40 text-green-700 font-semibold px-4 py-2 rounded-full shadow fade-up" style="--delay:0.4s">
-    🌱 New & Improved!
-  </div>
+  <div class="inline-flex items-center gap-2 bg-green-100/40 text-green-700 font-semibold px-4 py-2 rounded-full shadow fade-up"
+     style="--delay:0.4s; font-family: 'Fredoka', sans-serif;">
+  🌱 V3.2 - New & Improved!
+</div>
 
-  <h1 class="text-5xl sm:text-6xl font-extrabold mt-6 fade-up bg-gradient-to-r from-green-600 to-emerald-900 bg-clip-text text-transparent tracking-wide" 
-  style="--delay:0.5s; font-family: 'Orbitron', sans-serif;">
-AAHES, Assam
+  <h1 class="text-5xl sm:text-6xl mt-6 fade-up bg-gradient-to-r from-green-600 to-emerald-900 bg-clip-text text-transparent tracking-wide"
+  style="--delay:0.5s; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 800;">
+  AAHES, Assam
 </h1>
 
-  <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 mt-3 fade-up whitespace-nowrap" style="--delay:0.6s">
-    All Assam Helpdesk for <span class="text-green-500">Engineering</span> Students
-  </h4>
+  <h4 class="text-xl sm:text-2xl md:text-3xl text-gray-700 mt-3 fade-up whitespace-nowrap" 
+    style="--delay:0.6s; font-family: 'Pacifico', cursive;">
+  All Assam Helpdesk for <span class="text-green-500">Engineering</span> Students
+</h4>
 
-  <h5 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 mt-3 fade-up whitespace-nowrap" style="--delay:0.6s">
-    সদৌ অসম <span class="text-green-500">অভযান্ত্ৰিক</span> শিক্ষাৰ্থী হেল্পডেষ্ক
-  </h5>
+  <h5 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 mt-3 fade-up whitespace-nowrap"
+    style="--delay:0.6s; font-family: 'Noto Sans Bengali', sans-serif;">
+  সদৌ অসম <span class="text-green-500">অভযান্ত্ৰিক</span> শিক্ষাৰ্থী হেল্পডেষ্ক
+</h5>
 
   <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-6 fade-up" style="--delay:0.7s">
-    <span class="text-green-600 font-semibold">Predict</span> your dream college,
-    <span class="text-green-600 font-semibold">analyze</span> cutoffs, and
-    <span class="text-green-600 font-semibold">master</span> your preferences – all in one powerful platform.
+    <span class="text-green-600 font-semibold">Empowering</span> engineering aspirants across
+    <span class="text-green-600 font-semibold">Assam</span> with the right guidance, resources, and
+    <span class="text-green-600 font-semibold">community support</span> to shape a brighter future.
   </p>
 
   <div class="mt-10 bg-white inline-block px-6 py-2 rounded-full shadow-lg fade-up border border-green-300" style="--delay:0.8s">
     <span class="blink-dot"></span>
-    <span id="count" class="text-green-600 font-semibold">0</span>+ students are connected with AAHES
+    <span id="count" class="text-green-600 font-semibold">0</span>+ <i>students are connected with AAHES</i>
   </div>
 
   <div class="mt-8 fade-up flex flex-wrap justify-center gap-4" style="--delay:0.9s">
-    <button class="bg-green-600 text-white font-bold text-base rounded-xl px-6 py-3 shadow-lg hover:bg-green-700 transition-all">Cutoffs</button>
-    <a href="https://chat.whatsapp.com/L6RRF1a8l4cCzeuVEl7xLN" target="_blank">
-      <button class="border-2 border-green-600 text-green-600 font-bold text-base rounded-xl px-6 py-3 hover:bg-green-600 hover:text-white transition-all">Join Us on Whatsapp</button>
-    </a>
-  </div>
+  <!-- Cutoffs Button -->
+  <button class="bg-green-600 text-white font-bold text-base rounded-xl px-6 py-3 shadow-2xl hover:shadow-inner hover:bg-green-700 transform hover:-translate-y-1 transition-all">
+    Cutoffs
+  </button>
+
+  <!-- WhatsApp Button -->
+  <a href="https://chat.whatsapp.com/L6RRF1a8l4cCzeuVEl7xLN" target="_blank">
+    <button class="border-2 border-green-600 text-green-600 font-bold text-base rounded-xl px-6 py-3 shadow-2xl hover:shadow-inner hover:bg-green-600 hover:text-white transform hover:-translate-y-1 transition-all flex items-center gap-2">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5">
+      Join Us on Whatsapp
+    </button>
+  </a>
+</div>
 </section>
 
 <!-- Features Section -->
@@ -173,7 +188,7 @@ AAHES, Assam
         <p class="text-gray-600 mb-4">
           Get accurate predictions of colleges you can get based on your rank or marks. Our tool uses previous year data and trends to help you plan smartly.
         </p>
-        <a href="#" class="text-green-600 font-semibold hover:underline">Try Predictor →</a>
+        <a href="cutoff.html" class="text-green-600 font-semibold hover:underline">Explore Cutoffs →</a>
       </div>
 
       <div class="bg-white rounded-xl shadow-md p-6 text-left hover:shadow-xl transition transform hover:-translate-y-1">
@@ -181,7 +196,7 @@ AAHES, Assam
         <p class="text-gray-600 mb-4">
           Access previous years’ question papers from all Assam engineering colleges. Practice effectively and understand exam patterns before appearing.
         </p>
-        <a href="#" class="text-green-600 font-semibold hover:underline">Explore Cutoffs →</a>
+        <a href="#" class="text-green-600 font-semibold hover:underline">Solve PYQs →</a>
       </div>
 
       <div class="bg-white rounded-xl shadow-md p-6 text-left hover:shadow-xl transition transform hover:-translate-y-1">
@@ -189,7 +204,7 @@ AAHES, Assam
         <p class="text-gray-600 mb-4">
           Explore real campus experiences, placement statistics, and insights from students. Stay informed about opportunities before choosing your college.
         </p>
-        <a href="#" class="text-green-600 font-semibold hover:underline">Simulate Preferences →</a>
+        <a href="#" class="text-green-600 font-semibold hover:underline">Placement Stats →</a>
       </div>
     </div>
   </div>
@@ -197,43 +212,69 @@ AAHES, Assam
 
 <!-- Library Section -->
 <section id="library" class="py-20 px-6 bg-white">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl md:text-4xl font-extrabold text-green-700 fade-up" style="--delay:1.3s">Library</h2>
-    <p class="text-gray-700 mt-3 text-lg fade-up" style="--delay:1.4s">
-      Access all resources in one place — quick, organized, and interactive.
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Full-width Gradient Heading -->
+    <div class="w-full bg-gradient-to-r from-green-600 via-emerald-500 to-teal-500 py-6 rounded-xl mb-12 shadow-lg">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white text-center fade-up" style="--delay:1.3s; font-family: 'Orbitron', sans-serif;">
+        Library
+      </h2>
+    </div>
+
+    <p class="text-gray-700 text-lg mb-12 fade-up" style="--delay:1.4s">
+      Access all resources easily — PYQs, syllabus, notes, and guides categorized for quick navigation.
     </p>
 
-    <div class="mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 justify-items-center fade-up" style="--delay:1.5s">
-      <a href="#" class="group w-28 h-28 rounded-full bg-gradient-to-tr from-green-500 to-green-600 flex items-center justify-center text-white text-xl font-bold shadow-md transition-all hover:scale-105 hover:shadow-lg relative overflow-hidden">
-        <span class="z-10">PYQ</span>
-        <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      </a>
-
-      <a href="#" class="group w-28 h-28 rounded-full bg-gradient-to-tr from-emerald-500 to-emerald-600 flex items-center justify-center text-white text-xl font-bold shadow-md transition-all hover:scale-105 hover:shadow-lg relative overflow-hidden">
-        <span class="z-10">Syllabus</span>
-        <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      </a>
-
-      <a href="#" class="group w-28 h-28 rounded-full bg-gradient-to-tr from-green-600 to-green-700 flex items-center justify-center text-white text-xl font-bold shadow-md transition-all hover:scale-105 hover:shadow-lg relative overflow-hidden">
-        <span class="z-10">Class 11 Notes</span>
-        <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      </a>
-
-      <a href="#" class="group w-28 h-28 rounded-full bg-gradient-to-tr from-teal-500 to-teal-600 flex items-center justify-center text-white text-xl font-bold shadow-md transition-all hover:scale-105 hover:shadow-lg relative overflow-hidden">
-        <span class="z-10">Class 12 Notes</span>
-        <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      </a>
-
-      <a href="#" class="group w-28 h-28 rounded-full bg-gradient-to-tr from-lime-500 to-lime-600 flex items-center justify-center text-white text-xl font-bold shadow-md transition-all hover:scale-105 hover:shadow-lg relative overflow-hidden">
-        <span class="z-10">Books</span>
-        <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      </a>
-
-      <a href="#" class="group w-28 h-28 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-700 flex items-center justify-center text-white text-xl font-bold shadow-md transition-all hover:scale-105 hover:shadow-lg relative overflow-hidden">
-        <span class="z-10">Guides</span>
-        <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      </a>
+    <!-- PYQ Section -->
+    <div class="mb-12">
+      <h3 class="text-2xl font-bold text-green-600 mb-4 fade-up">PYQ</h3>
+      <div class="flex flex-wrap gap-4 fade-up">
+        <a href="#" class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">2025</a>
+        <a href="#" class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">2024</a>
+        <a href="#" class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">2023</a>
+        <a href="#" class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">2022</a>
+        <a href="#" class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">2021</a>
+        <a href="#" class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">2020</a>
+        <a href="#" class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">2019</a>
+        <a href="#" class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">2018</a>
+        <a href="#" class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">2017</a>
+      </div>
     </div>
+
+    <!-- Syllabus Section -->
+    <div class="mb-12">
+      <h3 class="text-2xl font-bold text-green-600 mb-4 fade-up">Syllabus</h3>
+      <div class="flex flex-wrap gap-4 fade-up">
+        <a href="#" class="px-5 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition">Physics - XI & XII</a>
+        <a href="#" class="px-5 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition">Chemistry - XI & XII</a>
+        <a href="#" class="px-5 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition">Mathematics - XI & XII</a>
+        <a href="#" class="px-5 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition">BTech 1st Sem</a>
+        <a href="#" class="px-5 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition">BTech 2nd Sem</a>
+      </div>
+    </div>
+
+    <!-- Class 11 & 12 Notes Section -->
+    <div class="mb-12">
+      <h3 class="text-2xl font-bold text-green-600 mb-4 fade-up">CEE Notes (XI & XII)</h3>
+      <div class="flex flex-wrap gap-4 fade-up">
+        <a href="#" class="px-5 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Physics - XI</a>
+        <a href="#" class="px-5 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Physics - XII</a>
+        <a href="#" class="px-5 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Chemistry - XI</a>
+        <a href="#" class="px-5 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Chemistry - XII</a>
+        <a href="#" class="px-5 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Mathematics - XI</a>
+        <a href="#" class="px-5 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Mathematics - XII</a>
+      </div>
+    </div>
+
+    <!-- BTech Notes Section -->
+    <div class="mb-12">
+      <h3 class="text-2xl font-bold text-green-600 mb-4 fade-up">BTech Notes</h3>
+      <div class="flex flex-wrap gap-4 fade-up">
+        <a href="#" class="px-5 py-2 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition">1st Semester</a>
+        <a href="#" class="px-5 py-2 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition">2nd Semester</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
