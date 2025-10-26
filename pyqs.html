@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AAHES | PYQ Papers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { 
+  font-family: 'Inter', sans-serif; 
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0); 
+}
+    
+
+    /* 🌿 Premium Card Style */
+    .pyq-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.pyq-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(16,185,129,0.05), rgba(52,211,153,0.02)); /* very light overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.pyq-card:hover::before {
+  opacity: 1; /* very subtle */
+}
+
+.pyq-card:hover {
+  transform: translateY(-4px) scale(1.01); /* small lift */
+  box-shadow: 0 8px 20px rgba(16,185,129,0.1); /* subtle shadow */
+  border-color: rgba(16,185,129,0.2);
+}
+
+    /* Card title font */
+    .pyq-card p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: #065f46;
+      position: relative;
+      z-index: 1;
+      font-size: 1rem;
+    }
+
+    /* 🌟 3D Button with Shine */
+    .open-btn {
+  position: relative;
+  background: linear-gradient(180deg, #34d399 0%, #059669 100%);
+  border: none;
+  color: white;
+  padding: 6px 16px; /* smaller padding */
+  font-weight: 600;
+  font-size: 0.8rem; /* smaller font */
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 0 #047857, 0 5px 10px rgba(16, 185, 129, 0.4);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.open-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #065f46, 0 8px 15px rgba(16, 185, 129, 0.5);
+}
+
+.open-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #064e3b, 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+.open-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75px;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 80%);
+  transform: skewX(-25deg);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.open-btn:hover::before {
+  opacity: 1;
+  left: 125%;
+  transition: all 0.75s ease;
+}
+
+    /* Navbar text */
+    nav ul li a {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+
+    /* Section headings */
+    h2 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+  <!-- 🌿 Navbar -->
+  <nav class="bg-white/80 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-extrabold text-green-700 drop-shadow-sm">AAHES</h1>
+      <ul class="flex gap-6 text-gray-700 font-medium text-sm md:text-base">
+        <li><a href="index.html" class="hover:text-green-600 transition">Home</a></li>
+        <li><a href="courses.html" class="hover:text-green-600 transition">Courses</a></li>
+        <li><a href="pyq.html" class="text-green-600 font-semibold">PYQs</a></li>
+        <li><a href="about.html" class="hover:text-green-600 transition">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 📘 PYQ Section -->
+  <section class="flex-grow">
+    <div class="max-w-5xl mx-auto px-6 py-12">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-green-700 text-center mb-8">
+        Previous Year Question Papers (PYQs)
+      </h2>
+
+      <div class="space-y-3">
+        <div class="pyq-card flex justify-between items-center px-6 py-4">
+          <p>CEE Question Paper 2025</p>
+          <a href="#" target="_blank" class="open-btn">Open</a>
+        </div>
+        <div class="pyq-card flex justify-between items-center px-6 py-4">
+          <p>CEE Question Paper 2024</p>
+          <a href="#" target="_blank" class="open-btn">Open</a>
+        </div>
+        <div class="pyq-card flex justify-between items-center px-6 py-4">
+          <p>CEE Question Paper 2023</p>
+          <a href="#" target="_blank" class="open-btn">Open</a>
+        </div>
+        <div class="pyq-card flex justify-between items-center px-6 py-4">
+          <p>CEE Question Paper 2022</p>
+          <a href="#" target="_blank" class="open-btn">Open</a>
+        </div>
+        <div class="pyq-card flex justify-between items-center px-6 py-4">
+          <p>CEE Question Paper 2021</p>
+          <a href="#" target="_blank" class="open-btn">Open</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 py-12">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-green-700 text-center mb-8">Answer Keys</h2>
+
+      <div class="space-y-3">
+        <div class="pyq-card flex justify-between items-center px-6 py-4">
+          <p>CEE Answer Key 2025</p>
+          <a href="#" target="_blank" class="open-btn">Open</a>
+        </div>
+        <div class="pyq-card flex justify-between items-center px-6 py-4">
+          <p>CEE Answer Key 2024</p>
+          <a href="#" target="_blank" class="open-btn">Open</a>
+        </div>
+        <div class="pyq-card flex justify-between items-center px-6 py-4">
+          <p>CEE Answer Key 2023</p>
+          <a href="#" target="_blank" class="open-btn">Open</a>
+        </div>
+        <div class="pyq-card flex justify-between items-center px-6 py-4">
+          <p>CEE Answer Key 2022</p>
+          <a href="#" target="_blank" class="open-btn">Open</a>
+        </div>
+        <div class="pyq-card flex justify-between items-center px-6 py-4">
+          <p>CEE Answer Key 2021</p>
+          <a href="#" target="_blank" class="open-btn">Open</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌱 Footer -->
+  <footer class="bg-green-100/80 backdrop-blur-md mt-auto">
+    <div class="max-w-7xl mx-auto px-6 py-6 text-center text-gray-700 text-sm">
+      <p class="font-semibold text-green-700">AAHES</p>
+      <p>© 2025 AAHES. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
