@@ -79,15 +79,15 @@
 
     // ✅ Your actual Firebase configuration
     const firebaseConfig = {
-      apiKey: "AIzaSyAmvYF2DCZn-fqDd8g1-idOSeZAakNncmQ",
-      authDomain: "aahes-users.firebaseapp.com",
-      databaseURL: "https://aahes-users-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "aahes-users",
-      storageBucket: "aahes-users.firebasestorage.app",
-      messagingSenderId: "1057679416807",
-      appId: "1:1057679416807:web:dd8e3cbcd6521616053142",
-      measurementId: "G-GVCNEV9H6L"
-    };
+  apiKey: "AIzaSyAmvYF2DCZn-fqDd8g1-idOSeZAakNncmQ",
+  authDomain: "aahes-users.firebaseapp.com",
+  databaseURL: "https://aahes-users-default-rtdb.asia-southeast1.firebasedatabase.app", // ✅ Correct regional URL
+  projectId: "aahes-users",
+  storageBucket: "aahes-users.firebasestorage.app",
+  messagingSenderId: "1057679416807",
+  appId: "1:1057679416807:web:dd8e3cbcd6521616053142",
+  measurementId: "G-GVCNEV9H6L"
+};
 
     // ✅ Initialize Firebase
     const app = initializeApp(firebaseConfig);
