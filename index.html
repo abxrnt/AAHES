@@ -132,10 +132,15 @@
 </nav>
 
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="fixed top-[60px] left-0 w-full bg-gradient-to-b from-gray-800 via-gray-900 to-gray-800 text-white px-4 py-4 space-y-3 shadow-2xl md:hidden z-50 rounded-b-2xl text-sm">
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed top-[60px] left-0 w-full bg-gradient-to-b from-gray-800 via-gray-900 to-gray-800 text-white px-4 py-4 space-y-3 shadow-2xl md:hidden z-50 rounded-b-2xl text-sm transform scale-y-0 origin-top transition-transform duration-300">
+
   <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-gray-700/50 hover:shadow-lg transition-all duration-300">🏠 Home</a>
-  <a href="#library" class="block px-3 py-2 rounded-lg hover:bg-gray-700/50 hover:shadow-lg transition-all duration-300">🎯 Library</a>
-  <button onclick="localStorage.removeItem('loggedIn'); window.location.href='login.html';" class="w-full text-left px-3 py-2 rounded-lg bg-red-700 hover:bg-red-600 hover:shadow-lg transition-all duration-300">Logout</button>
+  <a href="cutoff.html" class="block px-3 py-2 rounded-lg hover:bg-gray-700/50 hover:shadow-lg transition-all duration-300">ℹ️ About Us</a>
+  <a href="cutoff.html" class="block px-3 py-2 rounded-lg hover:bg-gray-700/50 hover:shadow-lg transition-all duration-300">📊 Cutoffs</a>
+  <a href="nothing.html" class="block px-3 py-2 rounded-lg hover:bg-gray-700/50 hover:shadow-lg transition-all duration-300">💼 Placements</a>
+  <a href="notes.html" class="block px-3 py-2 rounded-lg hover:bg-gray-700/50 hover:shadow-lg transition-all duration-300">📚 Notes</a>
+  <a href="nothing.html" class="block px-3 py-2 rounded-lg hover:bg-gray-700/50 hover:shadow-lg transition-all duration-300">📞 Contact Us</a>
 </div>
 
 
@@ -549,4 +554,5 @@ window.addEventListener("load", renderDownloads);
 
 </body>
 </html>
+
 
