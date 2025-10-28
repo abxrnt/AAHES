@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | AAHES</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+    }
+    input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      outline: none;
+      color: #000;
+    }
+    button {
+      width: 100%;
+      background: #ef4444;
+      padding: 0.7rem;
+      border-radius: 0.5rem;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #dc2626;
+    }
+    .switch {
+      text-align: center;
+      margin-top: 1rem;
+      color: #ccc;
+      cursor: pointer;
+    }
+    .switch:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2 class="text-2xl font-semibold text-center mb-4" id="formTitle">Login</h2>
+    
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    
+    <button id="actionBtn" onclick="login()">Login</button>
+    <p class="switch" onclick="toggleForm()">Don’t have an account? Sign up</p>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js"></script>
+
+  <script>
+    // 🔥 Your Firebase configuration (replace with your own)
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    let isSignup = false;
+
+    function toggleForm() {
+      const title = document.getElementById("formTitle");
+      const btn = document.getElementById("actionBtn");
+      const switchText = document.querySelector(".switch");
+
+      isSignup = !isSignup;
+      if (isSignup) {
+        title.innerText = "Sign Up";
+        btn.innerText = "Sign Up";
+        btn.setAttribute("onclick", "signup()");
+        switchText.innerText = "Already have an account? Login";
+      } else {
+        title.innerText = "Login";
+        btn.innerText = "Login";
+        btn.setAttribute("onclick", "login()");
+        switchText.innerText = "Don’t have an account? Sign up";
+      }
+    }
+
+    function signup() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!email || !password) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      const safeEmail = email.replace(/\./g, "_");
+
+      firebase.database().ref("users/" + safeEmail).set({
+        email: email,
+        password: password
+      })
+      .then(() => {
+        alert("Signup successful! Please login.");
+        toggleForm();
+      })
+      .catch(error => alert("Error: " + error.message));
+    }
+
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const safeEmail = email.replace(/\./g, "_");
+
+      firebase.database().ref("users/" + safeEmail).once("value")
+        .then(snapshot => {
+          const user = snapshot.val();
+          if (user && user.password === password) {
+            alert("Login successful!");
+            // redirect to home/dashboard
+            window.location.href = "index.html";
+          } else {
+            alert("Invalid email or password");
+          }
+        })
+        .catch(error => alert("Error: " + error.message));
+    }
+  </script>
+</body>
+</html>
