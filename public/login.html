@@ -71,28 +71,32 @@
     <p class="switch" onclick="toggleForm()">Don’t have an account? Sign up</p>
   </div>
 
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js"></script>
+  <!-- ✅ Firebase SDK (use v12 modular version for better support) -->
+  <script type="module">
+    // Import the Firebase functions you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js";
 
-  <script>
-    // 🔥 Your Firebase configuration (replace with your own)
+    // ✅ Your actual Firebase configuration
     const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID"
+      apiKey: "AIzaSyAmvYF2DCZn-fqDd8g1-idOSeZAakNncmQ",
+      authDomain: "aahes-users.firebaseapp.com",
+      databaseURL: "https://aahes-users-default-rtdb.firebaseio.com",
+      projectId: "aahes-users",
+      storageBucket: "aahes-users.firebasestorage.app",
+      messagingSenderId: "1057679416807",
+      appId: "1:1057679416807:web:dd8e3cbcd6521616053142",
+      measurementId: "G-GVCNEV9H6L"
     };
 
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
+    // ✅ Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
 
+    // ---------- Auth Logic ----------
     let isSignup = false;
 
-    function toggleForm() {
+    window.toggleForm = function() {
       const title = document.getElementById("formTitle");
       const btn = document.getElementById("actionBtn");
       const switchText = document.querySelector(".switch");
@@ -109,9 +113,9 @@
         btn.setAttribute("onclick", "login()");
         switchText.innerText = "Don’t have an account? Sign up";
       }
-    }
+    };
 
-    function signup() {
+    window.signup = function() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
@@ -121,8 +125,7 @@
       }
 
       const safeEmail = email.replace(/\./g, "_");
-
-      firebase.database().ref("users/" + safeEmail).set({
+      set(ref(db, "users/" + safeEmail), {
         email: email,
         password: password
       })
@@ -131,26 +134,36 @@
         toggleForm();
       })
       .catch(error => alert("Error: " + error.message));
-    }
+    };
 
-    function login() {
+    window.login = function() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
+
+      if (!email || !password) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      const dbRef = ref(db);
       const safeEmail = email.replace(/\./g, "_");
 
-      firebase.database().ref("users/" + safeEmail).once("value")
+      get(child(dbRef, "users/" + safeEmail))
         .then(snapshot => {
-          const user = snapshot.val();
-          if (user && user.password === password) {
-            alert("Login successful!");
-            // redirect to home/dashboard
-            window.location.href = "index.html";
+          if (snapshot.exists()) {
+            const user = snapshot.val();
+            if (user.password === password) {
+              alert("✅ Login successful!");
+              window.location.href = "index.html";
+            } else {
+              alert("❌ Invalid password!");
+            }
           } else {
-            alert("Invalid email or password");
+            alert("User not found!");
           }
         })
         .catch(error => alert("Error: " + error.message));
-    }
+    };
   </script>
 </body>
 </html>
